@@ -211,19 +211,7 @@
         
         // Sign in anonymously
         signInAnonymously(auth).catch((error) => {
-            console.error("Anonymous authentication failed:", error);
-        });
-
-        // Check for user ID in URL on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const userId = urlParams.get('user_id');
-            if (userId) {
-                console.log(`User ID from Discord: ${userId}`);
-                // You can store this userId in a hidden field or a variable if needed
-            } else {
-                console.log('No user ID found in URL.');
-            }
+            console.error("Firebase auth error:", error);
         });
     </script>
 </body>
